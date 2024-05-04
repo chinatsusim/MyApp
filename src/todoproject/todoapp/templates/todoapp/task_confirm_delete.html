@@ -1,0 +1,13 @@
+<!-- 継承設定 -->
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+
+<a href="{% url 'tasks' %}">TOPに戻る</a>
+<form method="POST">
+    {% csrf_token %}
+    <p>「{{task.title}}」を本当にタスクを削除しますか？</p>
+    <input type="submit" value="削除する" />
+</form>
+
+{% endblock content %}

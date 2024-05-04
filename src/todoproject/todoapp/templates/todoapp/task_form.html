@@ -1,0 +1,17 @@
+<!-- 継承設定 -->
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+
+<h1>タスクを登録しましょう！</h1>
+<a href="{% url 'tasks' %}">TOPに戻る</a>
+
+<form action="" method="POST">
+    <!-- 403になるのを防ぐ -->
+    {% csrf_token %} 
+    {{form.as_p}}
+    <input type="submit" value="Add">
+
+</form>
+
+{% endblock content %}
