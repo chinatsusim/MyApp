@@ -16,16 +16,13 @@ services:
     
     # 対話的なセッションやコマンドラインの操作を許可する
     tty: true
-
     volumes:
       # ローカルの作業ディレクトリと仮想環境の作業ディレクトリの対応づけ
       - ${SRC_PATH}:/root/workspace
 
     command: python manage.py runserver 0.0.0.0:8000
-
-    depends_on:
-      - db
     
+    # 以下のサービスを追加
     db:
       image: postgres
       environment:
