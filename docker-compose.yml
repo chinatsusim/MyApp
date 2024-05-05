@@ -20,8 +20,7 @@ services:
     volumes:
       # ローカルの作業ディレクトリと仮想環境の作業ディレクトリの対応づけ
       - ${SRC_PATH}:/root/workspace
-      
-services:
+
   nginx:
     image: nginx
     ports:
