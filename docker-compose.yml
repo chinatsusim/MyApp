@@ -19,12 +19,4 @@ services:
 
     volumes:
       # ローカルの作業ディレクトリと仮想環境の作業ディレクトリの対応づけ
-      - ./src:/root/workspace
-    command: python /root/workspace/manage.py runserver 0.0.0.0:8000
-      # ローカルの作業ディレクトリと仮想環境の作業ディレクトリの対応づけ
-      # - ${SRC_PATH}:/root/workspace
-
-  nginx:
-    image: nginx
-    ports:
-      - "80:80"
+      - ${SRC_PATH}:/root/workspace   
